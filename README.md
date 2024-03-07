@@ -6,7 +6,7 @@ Ce projet est un gestionnaire de tâches simple implémenté en Python. Il perme
 
 1. Clonez ce dépôt sur votre machine locale :
    
-   git clone https://github.com/votre-utilisateur/gestionnaire-de-taches.git
+   git clone https://github.com/yannyonta/TP_SE_yannyonta_clemencebangali.git
    
 
 2. Naviguez vers le dossier du projet :
