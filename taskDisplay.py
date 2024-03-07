@@ -1,7 +1,12 @@
+import dataTask
 
 def display_tasks(tasks):
     for task_id, task_info in tasks.items():
         print(f"Task ID: {task_id}, Title: {task_info['title']}, Completed: {task_info['completed']}")
+        
+def load_tasks():
+    tasks = dataTask.load_from_json('tasks.json')
+    return tasks
 
 def main():
     tasks = {}
