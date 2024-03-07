@@ -1,6 +1,6 @@
-# Gestionnaire de Tâches
+# Stockage des Tâches
 
-Ce projet est un gestionnaire de tâches simple implémenté en Python. Il permet d'ajouter, supprimer et marquer des tâches comme terminées.
+Ce projet permet de stocker et de manipuler des tâches à l'aide de fichiers JSON sur l'ordinateur.
 
 ## Installation
 
@@ -18,17 +18,17 @@ Ce projet est un gestionnaire de tâches simple implémenté en Python. Il perme
 
 ## Utilisation
 
-1. Ouvrez le fichier taskTool.py pour accéder aux fonctionnalités du gestionnaire de tâches.
+1. Ouvrez le fichier dataTask.py pour accéder aux fonctions de stockage des tâches.
 
-2. Importez le module taskTool dans votre propre code Python :
+2. Importez le module dataTask dans votre propre code Python :
    python
-   import taskTool
+   import dataTask
    
 
-3. Utilisez les fonctions fournies pour gérer les tâches :
-   - add_task(task_dict, new_task): Ajoute une nouvelle tâche au dictionnaire des tâches.
-   - remove_task(task_dict, task_id): Supprime une tâche du dictionnaire des tâches.
-   - complete_task(task_dict, task_id): Marque une tâche comme terminée dans le dictionnaire des tâches.
+3. Utilisez les fonctions fournies pour gérer le stockage des tâches :
+   - save_to_json(data, filename): Enregistre un dictionnaire de tâches dans un fichier JSON.
+   - load_from_json(filename): Charge un fichier JSON contenant des tâches et retourne le dictionnaire correspondant.
+   - delete_database(filename): Supprime le fichier de base de données JSON.
 
 ## Exemple d'utilisation
 
@@ -38,14 +38,10 @@ tasks = {
     2: {'id': 2, 'title': 'Répondre aux e-mails', 'completed': False}
 }
 
-# Ajouter une nouvelle tâche
-new_task = {'id': 3, 'title': 'Appeler le client', 'completed': False}
-tasks = taskTool.add_task(tasks, new_task)
+# Enregistrer les tâches dans un fichier JSON
+dataTask.save_to_json(tasks, 'tasks.json')
 
-# Supprimer une tâche
-tasks = taskTool.remove_task(tasks, 2)
+# Charger les tâches depuis le fichier JSON
+loaded_tasks = dataTask.load_from_json('tasks.json')
 
-# Marquer une tâche comme terminée
-tasks = taskTool.complete_task(tasks, 1)
-
-print(tasks)
+print(loaded_tasks)
